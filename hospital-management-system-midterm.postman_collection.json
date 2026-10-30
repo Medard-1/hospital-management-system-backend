@@ -1,0 +1,622 @@
+{
+  "info": {
+    "name": "hospital-management-system-midterm",
+    "description": "Hospital Management System Midterm Postman Collection for Musinguzi Medard (26601)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Step 0 - Seed Data",
+      "item": [
+        {
+          "name": "Step 0 - Qualification 1 (Midwifery)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/qualifications/save", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"name\": \"Midwifery\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Qualification 2 (Pediatric Care)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/qualifications/save", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"name\": \"Pediatric Care\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Qualification 3 (Intensive Care)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/qualifications/save", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"name\": \"Intensive Care\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Qualification 4 (Oncology Care - Unused)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/qualifications/save", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"name\": \"Oncology Care\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Ward 1 (Maternity)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/wards/save", "host": ["{{baseUrl}}"], "path": ["api", "wards", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"wardNumber\": 1,\n  \"name\": \"Maternity Ward\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Ward 2 (Pediatric)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/wards/save", "host": ["{{baseUrl}}"], "path": ["api", "wards", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"wardNumber\": 2,\n  \"name\": \"Pediatric Ward\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Ward 3 (Surgical)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/wards/save", "host": ["{{baseUrl}}"], "path": ["api", "wards", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"wardNumber\": 3,\n  \"name\": \"Surgical Ward\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Ward 4 (Free Ward)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/wards/save", "host": ["{{baseUrl}}"], "path": ["api", "wards", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"wardNumber\": 4,\n  \"name\": \"Isolation Ward\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Nurse 1 (Alice)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/nurses/save", "host": ["{{baseUrl}}"], "path": ["api", "nurses", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Uwase\",\n  \"licenseNumber\": \"RN-1001\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Nurse 2 (Bob)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/nurses/save", "host": ["{{baseUrl}}"], "path": ["api", "nurses", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Bob\",\n  \"lastName\": \"Mugisha\",\n  \"licenseNumber\": \"RN-1002\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Nurse 3 (Chantal)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/nurses/save", "host": ["{{baseUrl}}"], "path": ["api", "nurses", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Chantal\",\n  \"lastName\": \"Keza\",\n  \"licenseNumber\": \"RN-1003\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Inpatient 1 (Musinguzi Medard - ADM-2026-0151)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/inpatients/save", "host": ["{{baseUrl}}"], "path": ["api", "inpatients", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Medard\",\n  \"lastName\": \"Musinguzi\",\n  \"admissionNumber\": \"ADM-2026-0151\",\n  \"phone\": \"0788111222\",\n  \"bloodGroup\": \"O+\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Inpatient 2 (Grace Musinguzi - ADM-2026-0152)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/inpatients/save", "host": ["{{baseUrl}}"], "path": ["api", "inpatients", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Grace\",\n  \"lastName\": \"Musinguzi\",\n  \"admissionNumber\": \"ADM-2026-0152\",\n  \"phone\": \"0788333444\",\n  \"bloodGroup\": \"A+\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Inpatient 3 (David Habimana - ADM-2026-0153)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/inpatients/save", "host": ["{{baseUrl}}"], "path": ["api", "inpatients", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"David\",\n  \"lastName\": \"Habimana\",\n  \"admissionNumber\": \"ADM-2026-0153\",\n  \"phone\": \"0788555666\",\n  \"bloodGroup\": \"B+\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Inpatient 4 (Sarah Mutoni - ADM-2026-0154)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/inpatients/save", "host": ["{{baseUrl}}"], "path": ["api", "inpatients", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Sarah\",\n  \"lastName\": \"Mutoni\",\n  \"admissionNumber\": \"ADM-2026-0154\",\n  \"phone\": \"0788777888\",\n  \"bloodGroup\": \"AB+\"\n}"}
+          }
+        },
+        {
+          "name": "Step 0 - Inpatient 5 (Eric Ndayisaba - ADM-2026-0155)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/inpatients/save", "host": ["{{baseUrl}}"], "path": ["api", "inpatients", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Eric\",\n  \"lastName\": \"Ndayisaba\",\n  \"admissionNumber\": \"ADM-2026-0155\",\n  \"phone\": \"0788999000\",\n  \"bloodGroup\": \"O-\"\n}"}
+          }
+        }
+      ]
+    },
+    {
+      "name": "A2 - CRUD for Entities",
+      "item": [
+        {
+          "name": "A2 - Save Qualification (201)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/qualifications/save", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "save"]},
+            "body": {"mode": "raw", "raw": "{\n  \"name\": \"Emergency Nursing\"\n}"}
+          }
+        },
+        {
+          "name": "A2 - Get All Qualifications (200)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/qualifications/all", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "all"]}
+          }
+        },
+        {
+          "name": "A2 - Get Qualification by ID (200)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/qualifications/REPLACE_WITH_ID", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "REPLACE_WITH_ID"]}
+          }
+        },
+        {
+          "name": "A2 - Get Qualification by Unknown ID (404 Error)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/qualifications/00000000-0000-0000-0000-000000000000", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "00000000-0000-0000-0000-000000000000"]}
+          }
+        },
+        {
+          "name": "A2 - Get All Wards (200)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/wards/all", "host": ["{{baseUrl}}"], "path": ["api", "wards", "all"]}
+          }
+        },
+        {
+          "name": "A2 - Get All Nurses (200)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/nurses/all", "host": ["{{baseUrl}}"], "path": ["api", "nurses", "all"]}
+          }
+        },
+        {
+          "name": "A2 - Get All Inpatients (200)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/inpatients/all", "host": ["{{baseUrl}}"], "path": ["api", "inpatients", "all"]}
+          }
+        },
+        {
+          "name": "A2 - Get All Admissions (200)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/admissions/all", "host": ["{{baseUrl}}"], "path": ["api", "admissions", "all"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "B1 - Inpatients by lastName",
+      "item": [
+        {
+          "name": "B1 - Inpatients by lastName musinguzi (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/inpatients/by-last-name?lastName=musinguzi",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "inpatients", "by-last-name"],
+              "query": [{"key": "lastName", "value": "musinguzi"}]
+            }
+          }
+        },
+        {
+          "name": "B1 - Inpatients by non-existing lastName (200 Empty List)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/inpatients/by-last-name?lastName=nobody",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "inpatients", "by-last-name"],
+              "query": [{"key": "lastName", "value": "nobody"}]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "B2 - Admissions by status",
+      "item": [
+        {
+          "name": "B2 - Admissions by status ADMITTED (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/by-status?status=ADMITTED",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "by-status"],
+              "query": [{"key": "status", "value": "ADMITTED"}]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "B3 - Admissions between dates",
+      "item": [
+        {
+          "name": "B3 - Admissions between 2026-10-01 and 2026-10-31 (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/between?start=2026-10-01&end=2026-10-31",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "between"],
+              "query": [
+                {"key": "start", "value": "2026-10-01"},
+                {"key": "end", "value": "2026-10-31"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "C1 - Nurses by qualification",
+      "item": [
+        {
+          "name": "C1 - Nurses by qualification midwifery (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/nurses/by-qualification?name=midwifery",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "nurses", "by-qualification"],
+              "query": [{"key": "name", "value": "midwifery"}]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "C2 - Free wards",
+      "item": [
+        {
+          "name": "C2 - Free wards (Returns Ward 4) (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/wards/free", "host": ["{{baseUrl}}"], "path": ["api", "wards", "free"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "C3 - Qualifications nobody holds",
+      "item": [
+        {
+          "name": "C3 - Qualifications nobody holds (Returns Oncology Care) (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/qualifications/unused", "host": ["{{baseUrl}}"], "path": ["api", "qualifications", "unused"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "C4 - Inpatients of a nurse",
+      "item": [
+        {
+          "name": "C4 - Inpatients of nurse (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/inpatients/of-nurse/REPLACE_WITH_NURSE_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "inpatients", "of-nurse", "REPLACE_WITH_NURSE_ID"]
+            }
+          }
+        },
+        {
+          "name": "C4 - Inpatients of unknown nurse (404 Error)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/inpatients/of-nurse/00000000-0000-0000-0000-000000000000",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "inpatients", "of-nurse", "00000000-0000-0000-0000-000000000000"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "D1 - Safe saving",
+      "item": [
+        {
+          "name": "D1 - Save admission (201 Created)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/admissions/save", "host": ["{{baseUrl}}"], "path": ["api", "admissions", "save"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"admissionDate\": \"2026-11-05\",\n  \"complaint\": \"Routine observation\",\n  \"inpatient\": {\"id\": \"REPLACE_WITH_INPATIENT_ID\"},\n  \"nurse\": {\"id\": \"REPLACE_WITH_NURSE_ID\"}\n}"
+            }
+          }
+        },
+        {
+          "name": "D1 - Past admissionDate (400 Bad Request Error)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "{{baseUrl}}/api/admissions/save", "host": ["{{baseUrl}}"], "path": ["api", "admissions", "save"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"admissionDate\": \"2020-01-01\",\n  \"complaint\": \"Past check\",\n  \"inpatient\": {\"id\": \"REPLACE_WITH_INPATIENT_ID\"},\n  \"nurse\": {\"id\": \"REPLACE_WITH_NURSE_ID\"}\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "D2 - Status flow",
+      "item": [
+        {
+          "name": "D2 - Update status ADMITTED to UNDER_TREATMENT (200 Success)",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/REPLACE_WITH_ADMISSION_ID/status?status=UNDER_TREATMENT",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "REPLACE_WITH_ADMISSION_ID", "status"],
+              "query": [{"key": "status", "value": "UNDER_TREATMENT"}]
+            }
+          }
+        },
+        {
+          "name": "D2 - Invalid status change (400 Bad Request Error)",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/REPLACE_WITH_ADMISSION_ID/status?status=ADMITTED",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "REPLACE_WITH_ADMISSION_ID", "status"],
+              "query": [{"key": "status", "value": "ADMITTED"}]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "D3 - Add qualification to nurse",
+      "item": [
+        {
+          "name": "D3 - Add qualification to nurse (200 Success)",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/nurses/REPLACE_NURSE_ID/qualifications/REPLACE_QUALIFICATION_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "nurses", "REPLACE_NURSE_ID", "qualifications", "REPLACE_QUALIFICATION_ID"]
+            }
+          }
+        },
+        {
+          "name": "D3 - Nurse already has qualification (409 Conflict Error)",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/nurses/REPLACE_NURSE_ID/qualifications/REPLACE_QUALIFICATION_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "nurses", "REPLACE_NURSE_ID", "qualifications", "REPLACE_QUALIFICATION_ID"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "D4 - Move nurse to ward",
+      "item": [
+        {
+          "name": "D4 - Move nurse to free Ward 4 (200 Success)",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/api/nurses/REPLACE_NURSE_ID/ward?wardNumber=4",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "nurses", "REPLACE_NURSE_ID", "ward"],
+              "query": [{"key": "wardNumber", "value": "4"}]
+            }
+          }
+        },
+        {
+          "name": "D4 - Move nurse to already taken Ward 1 (409 Conflict Error)",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/api/nurses/REPLACE_NURSE_ID/ward?wardNumber=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "nurses", "REPLACE_NURSE_ID", "ward"],
+              "query": [{"key": "wardNumber", "value": "1"}]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "E1 - Write discharge report",
+      "item": [
+        {
+          "name": "E1 - Save discharge report for DISCHARGED admission (201 Created)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {
+              "raw": "{{baseUrl}}/api/discharge-reports/save?admissionId=REPLACE_WITH_DISCHARGED_ADMISSION_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "discharge-reports", "save"],
+              "query": [{"key": "admissionId", "value": "REPLACE_WITH_DISCHARGED_ADMISSION_ID"}]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"diagnosis\": \"Malaria\",\n  \"instructions\": \"Complete the Coartem course and rest\",\n  \"followUpDays\": 14\n}"
+            }
+          }
+        },
+        {
+          "name": "E1 - Report for non-DISCHARGED admission (400 Bad Request Error)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {
+              "raw": "{{baseUrl}}/api/discharge-reports/save?admissionId=REPLACE_WITH_ADMITTED_ADMISSION_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "discharge-reports", "save"],
+              "query": [{"key": "admissionId", "value": "REPLACE_WITH_ADMITTED_ADMISSION_ID"}]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"diagnosis\": \"Malaria\",\n  \"instructions\": \"Complete the Coartem course and rest\",\n  \"followUpDays\": 14\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "E2 - Discharge report history",
+      "item": [
+        {
+          "name": "E2 - History by inpatient admissionNumber (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/discharge-reports/inpatient/ADM-2026-0151",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "discharge-reports", "inpatient", "ADM-2026-0151"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "E3 - Delete and protect",
+      "item": [
+        {
+          "name": "E3 - Delete admission with discharge reports (409 Conflict Error)",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/delete/REPLACE_WITH_ADMISSION_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "delete", "REPLACE_WITH_ADMISSION_ID"]
+            }
+          }
+        },
+        {
+          "name": "E3 - Delete discharge report (200 Success)",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/discharge-reports/delete/REPLACE_WITH_REPORT_ID",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "discharge-reports", "delete", "REPLACE_WITH_REPORT_ID"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "F1 - Admissions per status",
+      "item": [
+        {
+          "name": "F1 - Stats by status (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/admissions/stats/by-status", "host": ["{{baseUrl}}"], "path": ["api", "admissions", "stats", "by-status"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "F2 - Nurse is absent",
+      "item": [
+        {
+          "name": "F2 - Cancel nurse day (200 Success)",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/cancel-day?nurseId=REPLACE_NURSE_ID&date=2026-10-20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "cancel-day"],
+              "query": [
+                {"key": "nurseId", "value": "REPLACE_NURSE_ID"},
+                {"key": "date", "value": "2026-10-20"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bonus 1 - Dashboard summary",
+      "item": [
+        {
+          "name": "Bonus 1 - Dashboard summary (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{baseUrl}}/api/dashboard/summary", "host": ["{{baseUrl}}"], "path": ["api", "dashboard", "summary"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bonus 2 - Admissions page",
+      "item": [
+        {
+          "name": "Bonus 2 - Admissions page (200 Success)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/admissions/page?page=0&size=5&sort=admissionDate,desc",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "admissions", "page"],
+              "query": [
+                {"key": "page", "value": "0"},
+                {"key": "size", "value": "5"},
+                {"key": "sort", "value": "admissionDate,desc"}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
