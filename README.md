@@ -62,9 +62,12 @@ server.port=8080
 
 3. Run the application:
    ```powershell
+   mvn spring-boot:run
+   ```
+   Or if Maven is not installed globally:
+   ```powershell
    .\mvnw.cmd spring-boot:run
    ```
-   Or run `HospitalManagementSystemApplication.java` directly in your IDE.
 
 4. The API will be available at `http://localhost:8080`.
 
