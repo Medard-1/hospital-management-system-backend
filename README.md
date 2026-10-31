@@ -62,9 +62,8 @@ server.port=8080
 
 3. Run the application:
    ```powershell
-   .\mvnw.cmd spring-boot:run
+   mvn spring-boot:run
    ```
-   Or run `HospitalManagementSystemApplication.java` directly in your IDE.
 
 4. The API will be available at `http://localhost:8080`.
 
@@ -72,9 +71,5 @@ server.port=8080
 
 ## Postman Collection
 
-Import both files from the root of this repository into Postman:
-- `hospital-management-system-midterm.postman_collection.json` — all requests
-- `hospital-management-system-midterm.postman_environment.json` — environment with `baseUrl=http://localhost:8080`
-
-Select the **Hospital Local** environment in Postman before running requests.  
+Import `hospital-management-system-midterm.postman_collection.json` from the root of this repository into Postman.  
 It contains one request per requirement (A2, B1, B2, B3, C1, C2, C3, C4, D1, D2, D3, D4, E1, E2, E3, F1, F2, Bonus1, Bonus2), each with success and error cases.
